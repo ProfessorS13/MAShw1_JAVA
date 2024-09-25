@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.Formatter;
 import java.util.Scanner;
 
 public class Main {
@@ -14,10 +12,11 @@ public class Main {
         String[] parts;
         String operator = "";
         parts = EXPRESSION.split("([+\\-*/])");
-        for (int i = 0; i < OPERATIONS.length; i++){
-            boolean containsElement = EXPRESSION.contains(OPERATIONS[i]); //есть ли элемент в строке
+
+        for (String operation : OPERATIONS) {
+            boolean containsElement = EXPRESSION.contains(operation); //есть ли элемент в строке
             if (containsElement) {
-                operator = OPERATIONS[i];
+                operator = operation;
             }
         }
         String operand1 = parts[0];
@@ -32,7 +31,7 @@ public class Main {
             return;
         }
 
-        //Создаем объект класса Calcilations
+        //Создаем объект класса Calculations
         Calculations calculator;
         if (isArabic) {
             calculator = new ArabicCalcs(Integer.parseInt(operand1), Integer.parseInt(operand2));

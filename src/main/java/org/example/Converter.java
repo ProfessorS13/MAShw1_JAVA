@@ -17,7 +17,7 @@ public class Converter {
 
     public static String IntToRoman(int number) {
         if (number < 1) {
-            throw new IllegalArgumentException("Неположительный результат");
+            return "Неположительный результат";
         }
         StringBuilder roman = new StringBuilder();
         for (int i = 0; i < IntValue.length; i++) {
